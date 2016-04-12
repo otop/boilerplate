@@ -2,7 +2,7 @@
   "name": "Sample",
   "version": "0.0.0",
     "scripts": {
-        "gulp": "gulp",
+        "gulp": "gulp"
     },
   "private": true,
   "dependencies": {
