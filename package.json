@@ -2,8 +2,8 @@
   "name": "Sample",
   "version": "0.0.0",
   "scripts": {
-    "gulp": "gulp",
-    "minify": "gulp minify"
+  	"gulp": "install -g gulp",
+    "test": "gulp",
   },
   "private": true,
   "dependencies": {
