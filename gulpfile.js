@@ -53,7 +53,7 @@ gulp.task('test', ['pre-test'],  () => {
         // gulp-mocha needs filepaths so you can't have any plugins before it
         .pipe(mocha({reporter: 'nyan'}))
         // Covering files
-        .pipe(istanbul.writeReports())
+        .pipe(istanbul.writeReports('/coverage/test-final'))
         // Enforce a coverage of at least 90%
         .pipe(istanbul.enforceThresholds({ thresholds: { global: 90 } }));
 });
@@ -64,10 +64,11 @@ gulp.task('lint', function() {
         .pipe(jshint.reporter('default'));
 });
 
+
 gulp.task('webpack:build-jsx', buildJSX);
 
 gulp.task('server-start', startMainServer);
 
-gulp.task('default', ['webpack:build-jsx', 'server-start', 'lint']);
+gulp.task('default', ['webpack:build-jsx', 'test', 'lint', 'server-start']);
 
 
