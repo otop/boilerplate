@@ -1,6 +1,9 @@
 {
   "name": "Sample",
   "version": "0.0.0",
+    "scripts": {
+        "gulp": "gulp",
+    },
   "private": true,
   "dependencies": {
     "body-parser": "~1.13.2",
