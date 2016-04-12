@@ -8,6 +8,7 @@ var env = require('gulp-env');
 var jshint = require('gulp-jshint');
 var mocha = require('gulp-mocha');
 var istanbul = require('gulp-istanbul');
+var babel = require('babel-core/register');
 
 var buildJSX = function (callback) {
     var webpackConfig = require('./webpack.config');
