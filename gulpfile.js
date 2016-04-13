@@ -63,7 +63,7 @@ gulp.task('lint', function() {
   return gulp.src('./client/*.jsx')
     .pipe(jshint())
     .pipe(jshint.reporter('gulp-jshint-file-reporter', {
-      filename:'./test/jshint-output.xml'
+      filename:'./jshint-output.xml'
     }));
 });
 
