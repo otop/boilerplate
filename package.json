@@ -2,7 +2,7 @@
   "name": "Sample",
   "version": "0.0.0",
   "private": true,
-    "scripts": {
+  "scripts": {
     "pretest": "jshint index.js ./test/.",
     "test": "mocha -R spec"
   },
@@ -30,6 +30,7 @@
     "gulp-env": "~0.4.0",
     "gulp-istanbul": "^0.10.4",
     "gulp-jshint": "^2.0.0",
+    "gulp-jshint-file-reporter": "0.0.2",
     "gulp-live-server": "0.0.29",
     "gulp-mocha": "^2.2.0",
     "gulp-run": "~1.6.12",
