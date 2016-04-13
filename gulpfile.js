@@ -51,9 +51,9 @@ gulp.task('pre-test', function () {
 gulp.task('test', ['pre-test'],  function() {
      gulp.src(['./test/example.js'])
         // gulp-mocha needs filepaths so you can't have any plugins before it
-        .pipe(mocha({reporter: 'nyan'}))
+        .pipe(mocha({reporter: 'spec'}))
         // Covering files
-        .pipe(istanbul.writeReports('/coverage/test-final'))
+        .pipe(istanbul.writeReports())
         // Enforce a coverage of at least 90%
         .pipe(istanbul.enforceThresholds({ thresholds: { global: 90 } }));
 });
