@@ -48,8 +48,8 @@ gulp.task('pre-test', function () {
         .pipe(istanbul.hookRequire());
 });
 
-gulp.task('test', ['pre-test'],  () => {
-    return gulp.src('./test/example.js', {read: false})
+gulp.task('test', ['pre-test'],  function() {
+     gulp.src(['./test/example.js'])
         // gulp-mocha needs filepaths so you can't have any plugins before it
         .pipe(mocha({reporter: 'nyan'}))
         // Covering files
