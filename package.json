@@ -1,10 +1,6 @@
 {
   "name": "Sample",
   "version": "0.0.0",
-  "scripts": {
-  	"gulp": "install -g gulp",
-    "test": "gulp",
-  },
   "private": true,
   "dependencies": {
     "body-parser": "~1.13.2",
