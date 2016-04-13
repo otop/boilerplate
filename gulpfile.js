@@ -10,6 +10,7 @@ var mocha = require('gulp-mocha');
 var istanbul = require('gulp-istanbul');
 var babel = require('babel-core/register');
 var jshint = require('gulp-jshint');
+var jshintXMLReporter = require('gulp-jshint-xml-file-reporter');
 
 var buildJSX = function (callback) {
     var webpackConfig = require('./webpack.config');
@@ -62,9 +63,11 @@ gulp.task('test', ['pre-test'],  function() {
 gulp.task('lint', function() {
   return gulp.src('./client/*.jsx')
     .pipe(jshint())
-    .pipe(jshint.reporter('gulp-jshint-file-reporter', {
-      filename:'./jshint-output.xml'
-    }));
+    .pipe(jshint.reporter(jshintXMLReporter))
+        .on('end', jshintXMLReporter.writeFile({
+            format: 'checkstyle',
+            filePath: './jshint.xml'
+        }));
 });
 
 gulp.task('webpack:build-jsx', buildJSX);

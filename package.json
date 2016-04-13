@@ -31,6 +31,7 @@
     "gulp-istanbul": "^0.10.4",
     "gulp-jshint": "^2.0.0",
     "gulp-jshint-file-reporter": "0.0.2",
+    "gulp-jshint-xml-file-reporter": "^0.5.1",
     "gulp-live-server": "0.0.29",
     "gulp-mocha": "^2.2.0",
     "gulp-run": "~1.6.12",

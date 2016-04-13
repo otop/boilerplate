@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<checkstyle version="4.3">
+	<file name="client\index.jsx">
+		<error line="1" column="1" severity="error" message="'import' is only available in ES6 (use 'esversion: 6')." source="jshint.W119" />
+		<error line="2" column="1" severity="error" message="'import' is only available in ES6 (use 'esversion: 6')." source="jshint.W119" />
+		<error line="4" column="1" severity="error" message="'class' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz)." source="jshint.W104" />
+		<error line="13" column="14" severity="error" message="Unclosed regular expression." source="jshint.E015" />
+		<error line="13" column="14" severity="error" message="Unrecoverable syntax error. (56% scanned)." source="jshint.E041" />
+	</file>
+</checkstyle>
