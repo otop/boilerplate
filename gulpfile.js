@@ -78,6 +78,6 @@ gulp.task('webpack:build-jsx', buildJSX);
 
 gulp.task('server-start', startMainServer);
 
-gulp.task('default', ['webpack:build-jsx', 'test', 'lint', 'server-start']);
+gulp.task('default', ['test', 'lint']);
 
 
