@@ -1,7 +1,0 @@
-
-5 lint errors found in client\index.jsx
-  [1,1](W119) 'import' is only available in ES6 (use 'esversion: 6').
-  [2,1](W119) 'import' is only available in ES6 (use 'esversion: 6').
-  [4,1](W104) 'class' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
-  [13,14](E015) Unclosed regular expression.
-  [13,14](E041) Unrecoverable syntax error. (56% scanned).
