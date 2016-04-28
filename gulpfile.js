@@ -42,27 +42,31 @@ var startMainServer = function () {
 };
 
 
-gulp.task('pre-test', function () {
-    return gulp.src(['lib/**/*.js'])
+//gulp.task('pre-test', function () {
+   // return gulp.src(['lib/**/*.js'])
         // Covering files
-        .pipe(istanbul())
+       /* .pipe(istanbul())
         // Force `require` to return covered files
         .pipe(istanbul.hookRequire());
-});
+});*/
+function handleError(err) {
+  console.log(err.toString());
+  this.emit('end');
+}
 
-gulp.task('test', ['pre-test'],  function() {
-     gulp.src(['./test/example.js'])
+gulp.task('test',  function() {
+     gulp.src(['./test/**/*.js'])
         // gulp-mocha needs filepaths so you can't have any plugins before it
-        .pipe(mocha({reporter: 'spec'}))
-        // Covering files
+        .pipe(mocha({reporter: 'spec'})
+        .on("error", handleError))
         .pipe(istanbul.writeReports({
 				  dir: './coverage',
 				  reporters: [ 'clover' ],
 				  reportOpts: { dir: './coverage' }
 }))
-        // Enforce a coverage of at least 90%
-        .pipe(istanbul.enforceThresholds({ thresholds: { global: 90 } }));
-});
+})
+
+
 
 gulp.task('lint', function() {
   return gulp.src('./client/*.jsx')
@@ -74,10 +78,15 @@ gulp.task('lint', function() {
         }));
 });
 
-gulp.task('webpack:build-jsx', buildJSX);
+//gulp.task('webpack:build-jsx', buildJSX);
 
-gulp.task('server-start', startMainServer);
+//gulp.task('server-start', startMainServer);
 
-gulp.task('default', ['test', 'lint']);
+gulp.task('default', ['lint', 'test'], function() {
+  gulp.watch(['test/*.js'], function() {
+    gulp.run('lint', 'test');
+  });
+});
+
 
 
