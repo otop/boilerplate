@@ -3,8 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "pretest": "jshint index.js ./test/.",
-    "test": "mocha -R spec"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
